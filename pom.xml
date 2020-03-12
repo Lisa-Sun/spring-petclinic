@@ -255,9 +255,9 @@
             <version>${mockito.version}</version>
           </dependency>
         </dependencies>
-      </plugin>
+      </plugin>-->
     </plugins>
--->
+
     <plugin> 
       <groupId>org.apache.maven.plugins</groupId> 
       <artifactId>maven-dependency-plugin</artifactId> 
