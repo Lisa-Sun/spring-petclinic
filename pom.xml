@@ -28,7 +28,7 @@
     <wro4j.version>1.8.0</wro4j.version>
 
     <jacoco.version>0.8.5</jacoco.version>
-    <nohttp-checkstyle.version>0.0.4.RELEASE</nohttp-checkstyle.version>
+   <!--<nohttp-checkstyle.version>0.0.4.RELEASE</nohttp-checkstyle.version> -->
     <spring-format.version>0.0.19</spring-format.version>
   </properties>
 
@@ -145,7 +145,7 @@
           </execution>
         </executions>
       </plugin>
-      
+
 <!--
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -181,9 +181,9 @@
           </execution>
         </executions>
       </plugin>
-      -->
-      <plugin>
 
+    -->
+      <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
         <executions>
@@ -226,7 +226,7 @@
 
       <!-- Spring Boot Actuator displays build-related information if a git.properties
         file is present at the classpath -->
-      <!--
+      
 
       <plugin>
         <groupId>ro.isdc.wro4j</groupId>
@@ -259,8 +259,9 @@
             <version>${mockito.version}</version>
           </dependency>
         </dependencies>
-      </plugin>-->
+      </plugin>
     
+
     <plugin> 
       <groupId>org.apache.maven.plugins</groupId> 
       <artifactId>maven-dependency-plugin</artifactId> 
@@ -271,7 +272,16 @@
         </execution>
       </executions>
     </plugin>
-  </plugins>
+
+    <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-dependency-plugin</artifactId> <version>2.4</version>
+  <executions>
+    <execution>
+        <id>copy-dependencies</id> <phase>package</phase> <goals><goal>copy-dependencies</goal></goals>
+      </execution>
+    </executions>
+</plugin>
+</plugins>
+
   </build>
 
   <!-- Apache 2 license -->
